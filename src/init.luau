@@ -15,5 +15,6 @@ return {
 	GenerateXMLFromTree = Serializer.GenerateXMLFromTree;
 	Escape = Entities.Escape;
 	Unescape = Entities.Unescape;
+	Decode = Entities.Decode;
 	Node = Node;
 }

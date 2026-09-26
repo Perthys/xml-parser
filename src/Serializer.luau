@@ -9,11 +9,18 @@ type Attribute = Node.Attribute
 
 type Constructor = (Tree: Node, Parts: { string }) -> ()
 
+local function Quote(Value: string): string
+	if not string.find(Value, "\"", 1, true) then return `"{Value}"` end
+	if not string.find(Value, "'", 1, true) then return `'{Value}'` end
+
+	return `"{(string.gsub(Value, "\"", "&quot;"))}"`
+end
+
 local function GenerateAttributeString(Attributes: { Attribute }): string
 	local Text: string = ""
 
 	for _, Attribute: Attribute in (Attributes) do
-		Text ..= ` {Attribute.Name}="{Attribute.Value}"`
+		Text ..= ` {Attribute.Name}={Quote(Attribute.Value)}`
 	end
 
 	return Text

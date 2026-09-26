@@ -15,6 +15,11 @@ Also Parses AST back into XML <br>
 - Tags
 - Singles
 - Comments
+- CDATA sections
+- Unquoted and boolean attributes
+- Stray `<` in text (only `<name`, `</name`, `<!--`, `<?name` and `<![CDATA[` open markup)
+- Case-insensitive closing-tag fallback
+- Safe entity decoding (out-of-range or malformed numeric entities stay literal)
 
 ## Install
 
@@ -59,7 +64,7 @@ print("Successfully installed XMLParser module. At:", XMLModule);
 
 **Wally**
 ```lua
-xmlparser = "perthys/xmlparser@2.0.0"
+xmlparser = "perthys/xml-parser@2.1.0"
 ```
 
 ## Usage

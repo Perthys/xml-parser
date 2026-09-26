@@ -1,3 +1,4 @@
 *.lock
 sourcemap.json
 *.rbxm
+.lunetest/
